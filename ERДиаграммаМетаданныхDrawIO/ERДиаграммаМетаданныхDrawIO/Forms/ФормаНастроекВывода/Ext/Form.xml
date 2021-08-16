@@ -166,6 +166,9 @@
 									<MaxWidth>6</MaxWidth>
 									<ContextMenu name="ШиринаТаблицыКонтекстноеМеню" id="4"/>
 									<ExtendedTooltip name="ШиринаТаблицыРасширеннаяПодсказка" id="5"/>
+									<Events>
+										<Event name="OnChange">ШиринаТаблицыПриИзменении</Event>
+									</Events>
 								</InputField>
 								<InputField name="ВысотаСтрок" id="12">
 									<DataPath>ВысотаСтрок</DataPath>
@@ -240,19 +243,78 @@
 							<ContextMenu name="РасстояниеМеждуТаблицамиКонтекстноеМеню" id="50"/>
 							<ExtendedTooltip name="РасстояниеМеждуТаблицамиРасширеннаяПодсказка" id="51"/>
 						</InputField>
-						<InputField name="РазделительИмениИТипа" id="21">
-							<DataPath>РазделительИмениИТипа</DataPath>
-							<Width>6</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>6</MaxWidth>
-							<ContextMenu name="РазделительИмениИТипаКонтекстноеМеню" id="22"/>
-							<ExtendedTooltip name="РазделительИмениИТипаРасширеннаяПодсказка" id="23"/>
-						</InputField>
-						<CheckBoxField name="СкрытьТаблицыПодШапку" id="46">
-							<DataPath>СкрытьТаблицыПодШапку</DataPath>
+						<UsualGroup name="ГруппаРаботаСТипами" id="52">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа работа с типами</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа работа с типами</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРаботаСТипамиРасширеннаяПодсказка" id="53"/>
+							<ChildItems>
+								<CheckBoxField name="ВыводитьТипыЭлементов" id="54">
+									<DataPath>ВыводитьТипыЭлементов</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыводитьТипыЭлементовКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ВыводитьТипыЭлементовРасширеннаяПодсказка" id="56"/>
+									<Events>
+										<Event name="OnChange">ВыводитьТипыЭлементовПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="РазделительИмениИТипа" id="21">
+									<DataPath>РазделительИмениИТипа</DataPath>
+									<Width>6</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>6</MaxWidth>
+									<ContextMenu name="РазделительИмениИТипаКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="РазделительИмениИТипаРасширеннаяПодсказка" id="23"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСокрытиеЭлементов" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сокрытие элементов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сокрытие элементов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСокрытиеЭлементовРасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<CheckBoxField name="СкрытьТаблицыПодШапку" id="46">
+									<DataPath>СкрытьТаблицыПодШапку</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СкрытьТаблицыПодШапкуКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="СкрытьТаблицыПодШапкуРасширеннаяПодсказка" id="48"/>
+								</CheckBoxField>
+								<CheckBoxField name="УбратьЛинииСвязейНаЗаднийПлан" id="59">
+									<DataPath>УбратьЛинииСвязейНаЗаднийПлан</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="УбратьЛинииСвязейНаЗаднийПланКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="УбратьЛинииСвязейНаЗаднийПланРасширеннаяПодсказка" id="61"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="ВыводитьТолькоСсылочныеРеквизиты" id="62">
+							<DataPath>ВыводитьСсылочныеРеквизиты</DataPath>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="СкрытьТаблицыПодШапкуКонтекстноеМеню" id="47"/>
-							<ExtendedTooltip name="СкрытьТаблицыПодШапкуРасширеннаяПодсказка" id="48"/>
+							<ContextMenu name="ВыводитьТолькоСсылочныеРеквизитыКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="ВыводитьТолькоСсылочныеРеквизитыРасширеннаяПодсказка" id="64"/>
 						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
@@ -443,6 +505,39 @@
 				</v8:NumberQualifiers>
 			</Type>
 			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ВыводитьТипыЭлементов" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выводить типы элементов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УбратьЛинииСвязейНаЗаднийПлан" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Убрать линии связей на задний план</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыводитьСсылочныеРеквизиты" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выводить ссылочные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
