@@ -12,6 +12,16 @@
 				<CommandName>Form.Command.ОткрытьФормуНастроекСтилей</CommandName>
 				<ExtendedTooltip name="ФормаОткрытьФормуНастроекСтилейРасширеннаяПодсказка" id="39"/>
 			</Button>
+			<Button name="ФормаЗагрузитьНастройки" id="58">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьНастройки</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьНастройкиРасширеннаяПодсказка" id="59"/>
+			</Button>
+			<Button name="СохранитьНастройки" id="56">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьНастройки</CommandName>
+				<ExtendedTooltip name="СохранитьНастройкиРасширеннаяПодсказка" id="57"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -39,6 +49,12 @@
 			<ChildItems>
 				<InputField name="ПутьКФайлу" id="1">
 					<DataPath>ПутьКФайлу</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к файлу XML</v8:content>
+						</v8:item>
+					</Title>
 					<ChoiceButton>true</ChoiceButton>
 					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="3"/>
@@ -87,6 +103,51 @@
 							<ExtendedTooltip name="ТипВыводимыхМетаданныхРасширеннаяПодсказка" id="49"/>
 							<Events>
 								<Event name="StartChoice">ТипВыводимыхМетаданныхНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаУсловиеПоПодсистеме" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа условие по подсистеме</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа условие по подсистеме</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаУсловиеПоПодсистемеРасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<CheckBoxField name="ПоказыватьЭлементыПодсистемы" id="64">
+							<DataPath>ПоказыватьЭлементыПодсистемы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показывать элементы подсистемы:</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПоказыватьЭлементыПодсистемыКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="ПоказыватьЭлементыПодсистемыРасширеннаяПодсказка" id="66"/>
+							<Events>
+								<Event name="OnChange">ПоказыватьЭлементыПодсистемыПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ПодсистемаОтбор" id="67">
+							<DataPath>ПодсистемаОтбор</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ПодсистемаОтборКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ПодсистемаОтборРасширеннаяПодсказка" id="69"/>
+							<Events>
+								<Event name="StartChoice">ПодсистемаОтборНачалоВыбора</Event>
 							</Events>
 						</InputField>
 					</ChildItems>
@@ -146,6 +207,11 @@
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.СохранитьВФайл</CommandName>
 						<ExtendedTooltip name="ДеревоМетаданныхСохранитьВФайлРасширеннаяПодсказка" id="32"/>
+					</Button>
+					<Button name="ДеревоМетаданныхЭкспортироватьВDrawIO" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЭкспортироватьВDrawIO</CommandName>
+						<ExtendedTooltip name="ДеревоМетаданныхЭкспортироватьВDrawIOРасширеннаяПодсказка" id="61"/>
 					</Button>
 				</ChildItems>
 			</AutoCommandBar>
@@ -624,6 +690,32 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ПоказыватьЭлементыПодсистемы" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать элементы подсистемы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодсистемаОтбор" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подсистема отбор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -672,7 +764,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сохранить в файл</v8:content>
+					<v8:content>Сохранить в файл XML</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -766,6 +858,66 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ОткрытьФормуНастроекСтилей</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СохранитьНастройки" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveReportSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьНастройки</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЗагрузитьНастройки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.LoadReportSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗагрузитьНастройки</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЭкспортироватьВDrawIO" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспортировать в draw.io (с открытием)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспортировать в draw IO</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateInitialImage</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЭкспортироватьВDrawIO</Action>
 			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>

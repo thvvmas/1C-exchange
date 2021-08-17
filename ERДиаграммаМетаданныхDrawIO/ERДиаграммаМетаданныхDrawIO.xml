@@ -27,6 +27,8 @@
 			<Form>Форма</Form>
 			<Form>ФормаНастроекВывода</Form>
 			<Form>ФормаВыбораМетаданных</Form>
+			<Form>ФормаВыборПодсистемы</Form>
+			<Form>ФормаНастроекСтилей</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
