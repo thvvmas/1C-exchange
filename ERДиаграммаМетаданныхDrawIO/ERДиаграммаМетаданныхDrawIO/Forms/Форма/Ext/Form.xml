@@ -15,6 +15,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -81,11 +82,12 @@
 						<InputField name="ТипВыводимыхМетаданных" id="47">
 							<DataPath>ТипВыводимыхМетаданных</DataPath>
 							<TitleLocation>None</TitleLocation>
-							<DropListButton>true</DropListButton>
-							<ListChoiceMode>true</ListChoiceMode>
-							<QuickChoice>true</QuickChoice>
+							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ТипВыводимыхМетаданныхКонтекстноеМеню" id="48"/>
 							<ExtendedTooltip name="ТипВыводимыхМетаданныхРасширеннаяПодсказка" id="49"/>
+							<Events>
+								<Event name="StartChoice">ТипВыводимыхМетаданныхНачалоВыбора</Event>
+							</Events>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -555,10 +557,11 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>100</v8:Length>
+					<v8:Length>200</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<SavedData>true</SavedData>
 		</Attribute>
 		<Attribute name="РасстояниеМеждуТаблицами" id="17">
 			<Title>
