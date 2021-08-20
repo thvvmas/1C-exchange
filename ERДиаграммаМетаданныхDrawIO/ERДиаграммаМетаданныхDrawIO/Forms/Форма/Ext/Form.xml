@@ -256,12 +256,37 @@
 						<Event name="OnChange">ДеревоМетаданныхВыбранПриИзменении</Event>
 					</Events>
 				</CheckBoxField>
-				<InputField name="ДеревоМетаданныхИмя" id="17">
-					<DataPath>ДеревоМетаданных.Имя</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ДеревоМетаданныхИмяКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ДеревоМетаданныхИмяРасширеннаяПодсказка" id="19"/>
-				</InputField>
+				<ColumnGroup name="ДеревоМетаданныхГруппаИмяИКартинка" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево метаданных группа имя и картинка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево метаданных группа имя и картинка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ДеревоМетаданныхГруппаИмяИКартинкаРасширеннаяПодсказка" id="71"/>
+					<ChildItems>
+						<InputField name="ДеревоМетаданныхИмя" id="17">
+							<DataPath>ДеревоМетаданных.Имя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоМетаданныхИмяКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="ДеревоМетаданныхИмяРасширеннаяПодсказка" id="19"/>
+						</InputField>
+						<PictureField name="ДеревоМетаданныхКартинка" id="72">
+							<DataPath>ДеревоМетаданных.Картинка</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоМетаданныхКартинкаКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ДеревоМетаданныхКартинкаРасширеннаяПодсказка" id="74"/>
+						</PictureField>
+					</ChildItems>
+				</ColumnGroup>
 				<InputField name="ДеревоМетаданныхНаименование" id="20">
 					<DataPath>ДеревоМетаданных.Наименование</DataPath>
 					<EditMode>EnterOnInput</EditMode>
@@ -410,6 +435,17 @@
 					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Картинка" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
